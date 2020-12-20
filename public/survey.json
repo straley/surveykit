@@ -1,0 +1,436 @@
+{
+  "first": "what-is-your-age",
+  "questions": {
+    "what-is-your-age": {
+      "text": "What is your age?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Under 18",
+          "value": "<18"
+        },
+        {
+          "text": "18 to 24",
+          "value": "18-24"
+        },
+        {
+          "text": "25 to 34",
+          "value": "25-34"
+        },
+        {
+          "text": "35 to 44",
+          "value": "35-44"
+        },
+        {
+          "text": "45 to 54",
+          "value": "45-54"
+        },
+        {
+          "text": "55 to 64",
+          "value": "55-64"
+        },
+        {
+          "text": "65 or Over",
+          "value": ">64"
+        }
+      ],
+      "logic": [
+        {
+          "equals": "<18",
+          "next": "not-available"
+        },
+        {
+          "next": "do-you-live-in-the-uk"
+        }
+      ]
+    },
+    "do-you-live-in-the-uk": {
+      "text": "Do you live in the UK?",
+      "format": "multichoice",
+      "type": "boolean",
+      "choices": [
+        {
+          "text": "Yes",
+          "value": true
+        },
+        {
+          "text": "No",
+          "value": false
+        }
+      ],
+      "logic": [
+        {
+          "equals": true,
+          "next": "what-is-your-gender"
+        },
+        {
+          "equals": false,
+          "next": "not-available"
+        }
+      ]
+    },
+    "what-is-your-gender": {
+      "text": "What is your gender?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Female",
+          "value": "F"
+        },
+        {
+          "text": "Male",
+          "value": "M"
+        },
+        {
+          "text": "Other",
+          "value": "O"
+        }
+      ],
+      "next": "what-is-your-annual-income"
+    },
+    "what-is-your-annual-income": {
+      "text": "What is your <b>annual</b> income?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Under £25,000",
+          "value": "<£25,000"
+        },
+        {
+          "text": "£25,000 to £34,999",
+          "value": "£25000-£34999"
+        },
+        {
+          "text": "£35,000 to £54,999",
+          "value": "£35000-£54999"
+        },
+        {
+          "text": "£55,000 to £89,999",
+          "value": "£55000-£89999"
+        },
+        {
+          "text": "£90,000 to £129,999",
+          "value": "£90000-£129999"
+        },
+        {
+          "text": "£130,000 or More",
+          "value": ">£130000"
+        }
+      ],
+      "next": "ever-used-stylist"
+    },
+    "ever-used-stylist": {
+      "text": "Have you used an in-person personal stylist or wardrobe consultant <b>in the past year</b>?",
+      "format": "multichoice",
+      "type": "boolean",
+      "choices": [
+        {
+          "text": "Yes",
+          "value": true
+        },
+        {
+          "text": "No",
+          "value": false
+        }
+      ],
+      "logic": [
+        {
+          "equals": true,
+          "next": "how-much-stylist-visit"
+        },
+        {
+          "equals": false,
+          "next": "would-you-use-stylist"
+        }
+      ]
+    },   
+    "how-much-stylist-visit": {
+      "text": "What was the <b>average</b> cost of your personal stylist or wardrobe consultant visits <b>in the past year</b>?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Free",
+          "value": "£0"
+        },
+        {
+          "text": "£1 to £74",
+          "value": "£1-£74"
+        },
+        {
+          "text": "£75 to £149",
+          "value": "£75-£149"
+        },
+        {
+          "text": "£150 to £299",
+          "value": "£150-£299"
+        },
+        {
+          "text": "£300 to £499",
+          "value": "£300-£499"
+        },
+        {
+          "text": "£500 to £999",
+          "value": "£500-£999"
+        },
+        {
+          "text": "£1,000 or More",
+          "value": ">£1,000"
+        }
+      ],
+      "next": "how-many-stylist-visit"
+    },
+    "how-many-stylist-visit": {
+      "text": "How many times did you visit a personal stylist or wardrobe consultant <b>in the past year</b>?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Never",
+          "value": "0"
+        },
+        {
+          "text": "Once",
+          "value": "1"
+        },
+        {
+          "text": "2 to 3",
+          "value": "2-3"
+        },
+        {
+          "text": "4 to 7",
+          "value": "4-7"
+        },
+        {
+          "text": "8 to 12",
+          "value": "8-12"
+        },
+        {
+          "text": "More than 12",
+          "value": "£500-£999"
+        }
+      ],
+      "next": "how-much-spend-fashion"
+    },
+    "would-you-use-stylist": {
+      "text": "Would you use an in-person personal stylist or wardrobe consultant if they were within your budget?",
+      "format": "multichoice",
+      "type": "boolean",
+      "choices": [
+        {
+          "text": "Yes",
+          "value": true
+        },
+        {
+          "text": "No",
+          "value": false
+        }
+      ],
+      "logic": [
+        {
+          "equals": true,
+          "next": "how-much-would-pay"
+        },
+        {
+          "equals": false,
+          "next": "how-much-spend-fashion"
+        }
+      ]
+    },
+    "how-much-would-pay": {
+      "text": "How much would you pay for a one hour visit with a stylist?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Nothing",
+          "value": "£0"
+        },
+        {
+          "text": "£1 to £24",
+          "value": "£1-£24"
+        },
+        {
+          "text": "£25 to £49",
+          "value": "£25-£49"
+        },
+        {
+          "text": "£50 to £99",
+          "value": "£50-£99"
+        },
+        {
+          "text": "£100 to £199",
+          "value": "£100-£199"
+        },
+        {
+          "text": "£200 to £299",
+          "value": "£200-£299"
+        },
+        {
+          "text": "£300 or More",
+          "value": ">£300"
+        }
+      ],
+      "next": "how-much-spend-fashion"
+    },
+    "how-much-spend-fashion": {
+      "text": "About how much do you spend <b>monthly</b> on fashion and fashion accessories?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Under £200",
+          "value": "<£200"
+        },
+        {
+          "text": "£200 to £499",
+          "value": "£200-£499"
+        },
+        {
+          "text": "£500 to £999",
+          "value": "£500-£999"
+        },
+        {
+          "text": "£1,000 or More",
+          "value": ">£1,000"
+        }
+      ],
+      "next": "how-much-spend-services"
+    },
+    "how-much-spend-services": {
+      "text": "About how much do you spend <b>per year</b> on personal services such as a hairstylist, personal trainer, or masseuse?",
+      "format": "multichoice",
+      "type": "string",
+      "choices": [
+        {
+          "text": "Under £100",
+          "value": "<£100"
+        },
+        {
+          "text": "£100 to £199",
+          "value": "£100-£199"
+        },
+        {
+          "text": "£200 to £499",
+          "value": "£200-£499"
+        },
+        {
+          "text": "£500 to £999",
+          "value": "£500-£999"
+        },
+        {
+          "text": "£1,000 or More",
+          "value": ">£1,000"
+        }
+      ],
+      "next": "percent-unused-wardrobe"
+    },
+    "percent-unused-wardrobe": {
+      "text": "What percentage of your wardrobe do you <b>seldom or never</b> wear?",
+      "format": "slider",
+      "type": "number",
+      "choices": [
+        {
+          "text": "Almost None",
+          "value": 0
+        },
+        {
+          "text": "20%",
+          "value": 0.2
+        },
+        {
+          "text": "40%",
+          "value": 0.4
+        },
+        {
+          "text": "60%",
+          "value": 0.6
+        },
+        {
+          "text": "80%",
+          "value": 0.8
+        },
+        {
+          "text": "Nearly All",
+          "value": 1.0
+        }
+      ],
+      "next": "percent-donate-wardrobe"
+    },
+    "percent-donate-wardrobe": {
+      "text": "What percentage of your wardrobe do you <b>donate, sell, or discard</b> each year?",
+      "format": "slider",
+      "type": "number",
+      "choices": [
+        {
+          "text": "Almost None",
+          "value": 0
+        },
+        {
+          "text": "20%",
+          "value": 0.2
+        },
+        {
+          "text": "40%",
+          "value": 0.4
+        },
+        {
+          "text": "60%",
+          "value": 0.6
+        },
+        {
+          "text": "80%",
+          "value": 0.8
+        },
+        {
+          "text": "Nearly All",
+          "value": 1.0
+        }
+      ],
+      "next": "ethical-choices"
+    },
+    "ethical-choices": {
+      "text": "How often do you make purchasing decisions based on sustainability or social responsibility?",
+      "format": "slider",
+      "type": "number",
+      "choices": [
+        {
+          "text": "Almost Never",
+          "value": 0
+        },
+        {
+          "text": "Rarely",
+          "value": 0.2
+        },
+        {
+          "text": "Sometimes",
+          "value": 0.4
+        },
+        {
+          "text": "Often",
+          "value": 0.6
+        },
+        {
+          "text": "Frequently",
+          "value": 0.8
+        },
+        {
+          "text": "Nearly Always",
+          "value": 1.0
+        }
+      ],
+      "next": "thank-you"
+    },
+    "not-available": {
+      "text": "Survey Not Available",
+      "subtext": "We're sorry.  You are not eligible for this survey."
+    },
+    "thank-you": {
+      "text": "Thank You",
+      "subtext": "Thank you for participating in this survey.  Your answers will help a small startup business."
+    }
+  }
+}
